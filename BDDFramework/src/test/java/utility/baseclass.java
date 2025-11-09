@@ -1,8 +1,10 @@
 package utility;
 
 import org.openqa.selenium.PageLoadStrategy;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import utility.Elements;
 
 public class baseclass extends Elements {
 	//FrameWorkconstants fs = new FrameWorkconstants();
@@ -16,6 +18,10 @@ public class baseclass extends Elements {
 			
 		}
 		mainDriver.get(FrameWorkconstants.url);
+	}
+	
+	public void EndBrowser() {
+		mainDriver.quit();
 	}
 
 }

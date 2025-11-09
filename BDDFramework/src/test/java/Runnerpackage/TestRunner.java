@@ -1,20 +1,31 @@
 package Runnerpackage;
 
+
+
+import org.testng.annotations.AfterSuite;
+
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import io.cucumber.
+import org.testng.annotations.Test;
+
+import io.cucumber.junit.Cucumber;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+import utility.baseclass;
+
 
 
 @CucumberOptions(
-		features = {"src\\main\\java\\Feature\\login.feature"},
-		glue = {"stepdefinition"},
+		features = {"src/main/java/Feature/login.feature"},
+		glue = {"StepDefinition"},
 		plugin = {"pretty"},
 		publish = true,
 		monochrome = true,
-		dryRun = true,
+		dryRun = false,
 		tags = ("@Search_on_google")
 		)
-
-public class TestRunner extends AbstractTestNGCucumberTests {
+//extends AbstractTestNGCucumberTests
+public class TestRunner extends AbstractTestNGCucumberTests{
 	baseclass bs = new baseclass();
 	
 	@BeforeTest
@@ -25,11 +36,16 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 			e.printStackTrace();
 		}
 	}
+	@AfterSuite
+	public void CloseBrowser() {
+		try {
+			bs.EndBrowser();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	
 	
-	
-	
-	
-	
-
 }
+
+
