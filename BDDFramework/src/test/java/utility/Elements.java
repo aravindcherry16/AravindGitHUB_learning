@@ -16,5 +16,10 @@ public class Elements {
 	public void matter() {
 		System.out.println("Matter");
 	}
+	
+	public void Clickbytext(String text) {
+		System.out.println(text);
+		
+	}
 
 }
