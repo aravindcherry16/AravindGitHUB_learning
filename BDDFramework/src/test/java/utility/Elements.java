@@ -7,8 +7,8 @@ public class Elements {
 	public static WebDriver mainDriver = null;
 	
 	public String getTitle() {
-		String Title = mainDriver.getTitle();
-		return Title;
+		String Page_Title = mainDriver.getTitle();
+		return Page_Title;
 		
 	}
 
