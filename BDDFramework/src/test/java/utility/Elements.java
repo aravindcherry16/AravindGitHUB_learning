@@ -7,8 +7,8 @@ public class Elements {
 	public static WebDriver mainDriver = null;
 	
 	public String getTitle() {
-		String Title_local_Aravind = mainDriver.getTitle();
-		return Title_local_Aravind;
+		String Page_Title_remote = mainDriver.getTitle();
+		return Page_Title_remote;
 		
 	}
 
