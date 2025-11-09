@@ -17,8 +17,8 @@ public class Elements {
 		System.out.println("Matter");
 	}
 	
-	public void Clickbytext(String text) {
-		System.out.println(text);
+	public void Clickbytext(String Clickabletext) {
+		System.out.println(Clickabletext);
 		
 	}
 
