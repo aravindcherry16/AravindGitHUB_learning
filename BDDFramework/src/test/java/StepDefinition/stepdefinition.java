@@ -1,7 +1,7 @@
 package StepDefinition;
 
 import org.TestObjects.PageTestObjects;
-
+import org.testng.Assert;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -22,6 +22,9 @@ public class stepdefinition {
 	    // Write code here that turns the phrase above into concrete actions
 		pto.ValidateTilte();
 		System.out.println("Added new Line in Definition file");
+		System.out.println("Eclpse");
+		Assert.assertEquals(pto, pto);
 	}
 
+	
 }
