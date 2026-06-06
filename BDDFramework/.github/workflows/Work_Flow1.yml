@@ -14,7 +14,5 @@ jobs:
       with:
         java-version: '19'
         distribution: 'adopt'
-    - name: Verify pom.xml location
-      run: ls -la pom.xml
     - name: Build with Maven
       run: mvn clean test
