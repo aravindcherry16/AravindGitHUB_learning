@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class baseclass extends Elements {
 	//FrameWorkconstants fs = new FrameWorkconstants();
@@ -20,9 +22,11 @@ public class baseclass extends Elements {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--disable-gpu");
         
-        WebDriver driver = new ChromeDriver(options);
-        Elements.mainDriver = driver;  // Initialize the static driver
-        driver.manage().timeouts().implicitlyWait(10, java.util.concurrent.TimeUnit.SECONDS);
+        //WebDriver driver = new ChromeDriver(options);
+		WebDriverManager.chromedriver().setup();
+        mainDriver = new ChromeDriver(options);
+        //Elements.mainDriver = driver;  // Initialize the static driver
+        mainDriver.manage().timeouts().implicitlyWait(10, java.util.concurrent.TimeUnit.SECONDS);
 			
 		}
 		mainDriver.get(FrameWorkconstants.url);
