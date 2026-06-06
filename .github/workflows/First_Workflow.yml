@@ -14,9 +14,11 @@ jobs:
       with:
         java-version: '19'
         distribution: 'adopt'
-    - name: Install ChromeDriver
+    - name: Install Google Chrome and ChromeDriver
       run: |
         sudo apt-get update
-        sudo apt-get install -y chromium-browser chromium-chromedriver
+        sudo apt-get install -y google-chrome-stable chromium-chromedriver
+        which google-chrome || echo "Chrome not found at expected location"
+        ls -la /usr/bin/google-chrome* || echo "Checking alternative paths"
     - name: Build with Maven
       run: cd BDDFramework && mvn clean test
